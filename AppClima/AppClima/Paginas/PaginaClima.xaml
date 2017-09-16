@@ -48,13 +48,12 @@
                    VerticalOptions="CenterAndExpand"/>
             <ActivityIndicator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
                                x:Name="activityIndicator" Color="Blue" IsVisible="False"/>
-            
             <Label Grid.Row="2" Grid.Column="0" 
                    Text="Ubicación" Style="{StaticResource Texto}"/>
             <Label Grid.Row="2" Grid.Column="1" 
                    Text="{Binding Titulo}" Style="{StaticResource Detalle}"/>
             <Label Grid.Row="3" Grid.Column="0" 
-                   Text="Temperatura" Style="{StaticResource Texto}"/>
+                   Text="Temperatura" Style="{StaticResource Texto}"/> 
             <Label Grid.Row="3" Grid.Column="1" 
                    Text="{Binding Temperatura}" Style="{StaticResource Detalle}"/>
             <Label Grid.Row="4" Grid.Column="0" 
