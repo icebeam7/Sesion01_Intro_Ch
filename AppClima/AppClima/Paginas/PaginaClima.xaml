@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppClima.Paginas.PaginaClima"
+             Title="Consulta del clima" BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Texto" TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="#a8a8a8"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <Style x:Key="Detalle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ScrollView>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" 
+                   Text="Ciudad" Style="{StaticResource Texto}" />
+            <Entry Grid.Row="0" Grid.Column="1" 
+                   x:Name="txtCiudad" TextColor="Black" BackgroundColor="White" 
+                   VerticalOptions="CenterAndExpand"/>
+            <ActivityIndicator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                               x:Name="activityIndicator" Color="Blue" IsVisible="False"/>
+            
+            <Label Grid.Row="2" Grid.Column="0" 
+                   Text="Ubicación" Style="{StaticResource Texto}"/>
+            <Label Grid.Row="2" Grid.Column="1" 
+                   Text="{Binding Titulo}" Style="{StaticResource Detalle}"/>
+            <Label Grid.Row="3" Grid.Column="0" 
+                   Text="Temperatura" Style="{StaticResource Texto}"/>
+            <Label Grid.Row="3" Grid.Column="1" 
+                   Text="{Binding Temperatura}" Style="{StaticResource Detalle}"/>
+            <Label Grid.Row="4" Grid.Column="0" 
+                   Text="Viento" Style="{StaticResource Texto}"/>
+            <Label Grid.Row="4" Grid.Column="1" 
+                   Text="{Binding Viento}" Style="{StaticResource Detalle}"/>
+            <Label Grid.Row="5" Grid.Column="0" 
+                   Text="Humedad" Style="{StaticResource Texto}"/>
+            <Label Grid.Row="5" Grid.Column="1" 
+                   Text="{Binding Humedad}" Style="{StaticResource Detalle}"/>
+            <Label Grid.Row="6" Grid.Column="0" 
+                   Text="Visibilidad" Style="{StaticResource Texto}"/>
+            <Label Grid.Row="6" Grid.Column="1" 
+                   Text="{Binding Visibilidad}" Style="{StaticResource Detalle}"/>
+            <Label Grid.Row="7" Grid.Column="0" 
+                   Text="Amanecer" Style="{StaticResource Texto}"/>
+            <Label Grid.Row="7" Grid.Column="1" 
+                   Text="{Binding Amanecer}" Style="{StaticResource Detalle}"/>
+            <Label Grid.Row="8" Grid.Column="0" 
+                   Text="Ocaso" Style="{StaticResource Texto}"/>
+            <Label Grid.Row="8" Grid.Column="1" 
+                   Text="{Binding Ocaso}" Style="{StaticResource Detalle}"/>
+        </Grid>
+    </ScrollView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="btnBuscar" Text="Buscar" 
+                     Order="Primary" Priority="0" Clicked="btnBuscar_Clicked"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>
